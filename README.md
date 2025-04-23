@@ -52,3 +52,4 @@ export default tseslint.config({
   },
 })
 ```
+npm i --save-dev @types/node

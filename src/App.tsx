@@ -1,12 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Home from "./Home"
 import HomeBody from "./Home/HomeBody"
-import Products from "./Home/Products"
-import ProductBody from "./Home/Products/ProductsBody"
-import Computers from "./Home/Products/Computers"
-import Electronics from "./Home/Products/Electronics"
-import Books from "./Home/Products/Books"
-import About from "./Home/About"
+import Before from "./Home/Before"
+
+import Perfil from "./Home/Before/Perfil"
+import NotFoundPerfil from "./Home/Before/NotFoundPerfil"
 import NotFound from "./Home/NotFound"
 
 
@@ -15,18 +13,18 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>     
+      <Routes>
         <Route path="/" element={<Home />} >
           <Route index element={<Navigate to="/home" />} />
           <Route path="home" element={<HomeBody />} />
           <Route path="/*" element={<NotFound />} />
-          <Route path="products/" element={<Products />} >            
-            <Route index element={<ProductBody />} />
-            <Route path="computers" element={<Computers />} />
-            <Route path="electronics" element={<Electronics />} />
-            <Route path="books" element={<Books />} />
+          <Route path="before/" element={<Before />} >
+
+            <Route path="perfil" element={<Perfil />} />
+            <Route path="notfoundPerfil" element={<NotFoundPerfil />} />
+            
           </Route>
-          <Route path="about" element={<About />} />
+
         </Route>
         <Route />
       </Routes>
